@@ -1,40 +1,285 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="login-pf" lang="es" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Contacto</title>
-    <!-- *** AQUÍ ESTÁ LA CLAVE: Enlace al archivo CSS externo *** -->
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+            <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Inicia sesión en Departamento de Educación del Gobierno de Navarra</title>
+    <link rel="icon" href="/auth/resources/fz4zu/login/educa/img/favicon.ico" />
+            <link href="/auth/resources/fz4zu/common/keycloak/vendor/patternfly-v4/patternfly.min.css" rel="stylesheet" />
+            <link href="/auth/resources/fz4zu/common/keycloak/vendor/patternfly-v3/css/patternfly.min.css" rel="stylesheet" />
+            <link href="/auth/resources/fz4zu/common/keycloak/vendor/patternfly-v3/css/patternfly-additions.min.css" rel="stylesheet" />
+            <link href="/auth/resources/fz4zu/common/keycloak/lib/pficon/pficon.css" rel="stylesheet" />
+            <link href="/auth/resources/fz4zu/login/educa/css/login.css" rel="stylesheet" />
+    <script type="importmap">
+        {
+            "imports": {
+                "rfc4648": "/auth/resources/fz4zu/common/keycloak/vendor/rfc4648/rfc4648.js"
+            }
+        }
+    </script>
+    <script src="/auth/resources/fz4zu/login/educa/js/menu-button-links.js" type="module"></script>
+    <script type="module">
+        import { startSessionPolling } from "/auth/resources/fz4zu/login/educa/js/authChecker.js";
+
+        startSessionPolling(
+            "/auth/realms/educacion.navarra.es/login-actions/restart?client_id=educa-mensajeria-frontend&tab_id=zkj7TsDPcFQ&client_data=eyJydSI6Imh0dHBzOi8vZWR1Y2FnZXMubmF2YXJyYS5lcy9FZHVjYS9tZW5zYWplcmlhL2VzLyIsInJ0IjoiY29kZSIsInJtIjoiZnJhZ21lbnQiLCJzdCI6IjRiMTVjMDVkLWM4ZTEtNDA1Zi04YjRlLWQzZWU3YjAyMmNkMCJ9&skip_logout=true"
+        );
+    </script>
+    <script type="module">
+        document.addEventListener("click", (event) => {
+            const link = event.target.closest("a[data-once-link]");
+
+            if (!link) {
+                return;
+            }
+
+            if (link.getAttribute("aria-disabled") === "true") {
+                event.preventDefault();
+                return;
+            }
+
+            const { disabledClass } = link.dataset;
+
+            if (disabledClass) {
+                link.classList.add(...disabledClass.trim().split(/\s+/));
+            }
+
+            link.setAttribute("role", "link");
+            link.setAttribute("aria-disabled", "true");
+        });
+    </script>
+        <script type="module">
+            import { checkAuthSession } from "/auth/resources/fz4zu/login/educa/js/authChecker.js";
+
+            checkAuthSession(
+                "3dM4jaUo2NmukV39upXy46Q2ecm5q2YuvlJOoj0ZpJU"
+            );
+        </script>
 </head>
-<body>
-    <div class="container">
-        <form id="contactForm">
-            <h2>Contáctanos</h2>
 
-            <!-- Nombre -->
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-            </div>
-
-            <!-- Email -->
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-            <!-- Mensaje -->
-            <div class="form-group">
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-            </div>
-
-            <!-- Botón de Enviar -->
-            <button type="submit" class="btn-submit">Enviar Mensaje</button>
-        </form>
+<body class="" data-page-id="login-login">
+<div class="login-pf-page">
+    <div id="kc-header" class="login-pf-page-header">
+        <div id="kc-header-wrapper"
+             class="">Departamento de Educación del Gobierno de Navarra</div>
     </div>
+    <div class="card-pf">
+        <header class="login-pf-header">
+                <div class="hidden" id="kc-locale">
+                    <div id="kc-locale-wrapper" class="">
+                        <div id="kc-locale-dropdown" class="menu-button-links ">
+                            <button tabindex="1" id="kc-current-locale-link" aria-label="languages" aria-haspopup="true" aria-expanded="false" aria-controls="language-switch1">ES</button>
+                            <ul role="menu" tabindex="-1" aria-labelledby="kc-current-locale-link" aria-activedescendant="" id="language-switch1" class="pf-c-dropdown__menu pf-m-align-right">
+                                    <li class="" role="none">
+                                        <a role="menuitem" id="language-1" class="pf-c-dropdown__menu-item" href="/auth/realms/educacion.navarra.es/login-actions/authenticate?client_id=educa-mensajeria-frontend&amp;tab_id=zkj7TsDPcFQ&amp;client_data=eyJydSI6Imh0dHBzOi8vZWR1Y2FnZXMubmF2YXJyYS5lcy9FZHVjYS9tZW5zYWplcmlhL2VzLyIsInJ0IjoiY29kZSIsInJtIjoiZnJhZ21lbnQiLCJzdCI6IjRiMTVjMDVkLWM4ZTEtNDA1Zi04YjRlLWQzZWU3YjAyMmNkMCJ9&amp;execution=d0c25c40-85ad-491b-9103-a7a2fe3ab5b5&amp;kc_locale=es">ES</a>
+                                    </li>
+                                    <li class="" role="none">
+                                        <a role="menuitem" id="language-2" class="pf-c-dropdown__menu-item" href="/auth/realms/educacion.navarra.es/login-actions/authenticate?client_id=educa-mensajeria-frontend&amp;tab_id=zkj7TsDPcFQ&amp;client_data=eyJydSI6Imh0dHBzOi8vZWR1Y2FnZXMubmF2YXJyYS5lcy9FZHVjYS9tZW5zYWplcmlhL2VzLyIsInJ0IjoiY29kZSIsInJtIjoiZnJhZ21lbnQiLCJzdCI6IjRiMTVjMDVkLWM4ZTEtNDA1Zi04YjRlLWQzZWU3YjAyMmNkMCJ9&amp;execution=d0c25c40-85ad-491b-9103-a7a2fe3ab5b5&amp;kc_locale=eu">EU</a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <h1 id="kc-page-title">
+<link rel="stylesheet" href="/auth/resources/fz4zu/login/educa/css/site.min.css">
+<script type="text/javascript" src="/auth/resources/fz4zu/login/educa/js/site.min.js"></script>
+<script type="text/javascript" src="/auth/resources/fz4zu/login/educa/js/script.js"></script>
+<script type="text/javascript" src="/auth/resources/fz4zu/login/educa/js/purify.min.js"></script>
+<script>
+  <!-- ajustes para quitar en esta pagina estilos y ocultar cabecera -->
+  document.documentElement.className='';
+  document.getElementById('kc-header').classList.add('hidden');
+  document.getElementById('kc-header-wrapper').classList.add('hidden');
+</script>
+<input type="hidden" id="Culture" value="ES">
 
-    <script src="script.js"></script> <!-- Asumiendo que tienes JS -->
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function (event) {
+    var req = new XMLHttpRequest();
+    var locale = "ES" == "EU"? "eu": "es";
+      const URL = "https://educages.navarra.es/Educa/public/trMSGAvisosLogin?txIdioma=" + locale;
+
+    req.onreadystatechange = function () {
+	  if(req.readyState === XMLHttpRequest.DONE && req.status === 200) {
+	    var hidden = document.createElement("div");
+	    hidden.style.display = "none";
+        hidden.innerHTML = DOMPurify.sanitize(this.responseText, {RETURN_TRUSTED_TYPE: true});
+	    var msg = hidden.querySelector('div.titulo + div');
+        var msgHTML = msg.innerHTML.trim();
+        
+        if (msgHTML !== '<br>' && msgHTML != '') {
+          var avisosEduca = document.getElementById('avisoEducaContent');
+          avisosEduca.appendChild(msg);
+          document.getElementById('avisoEduca').classList.remove("hidden");
+        }
+	  }
+    };
+
+    req.open("GET", URL);
+    req.send();
+  });
+</script>
+
+<header>
+  <div id="navbarid" class="navbar navbar-fixed-top entorno">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 logo">
+          <a href="https://www.educacion.navarra.es/" target="_blank">
+            <img alt="Logotipo Gobierno de Navarra" src="/auth/resources/fz4zu/login/educa/img/dpto-logo.png" title="" width="100%">
+          </a>
+        </div>
+        <div class="col-sm-3">
+          <div class="language">
+            <ul>
+              <li class="">
+                <a class="disabled" href="/auth/realms/educacion.navarra.es/login-actions/authenticate?client_id=educa-mensajeria-frontend&amp;tab_id=zkj7TsDPcFQ&amp;client_data=eyJydSI6Imh0dHBzOi8vZWR1Y2FnZXMubmF2YXJyYS5lcy9FZHVjYS9tZW5zYWplcmlhL2VzLyIsInJ0IjoiY29kZSIsInJtIjoiZnJhZ21lbnQiLCJzdCI6IjRiMTVjMDVkLWM4ZTEtNDA1Zi04YjRlLWQzZWU3YjAyMmNkMCJ9&amp;execution=d0c25c40-85ad-491b-9103-a7a2fe3ab5b5&amp;kc_locale=eu">EU</a>
+              </li>
+              <li class="">
+                <a class="active" href="/auth/realms/educacion.navarra.es/login-actions/authenticate?client_id=educa-mensajeria-frontend&amp;tab_id=zkj7TsDPcFQ&amp;client_data=eyJydSI6Imh0dHBzOi8vZWR1Y2FnZXMubmF2YXJyYS5lcy9FZHVjYS9tZW5zYWplcmlhL2VzLyIsInJ0IjoiY29kZSIsInJtIjoiZnJhZ21lbnQiLCJzdCI6IjRiMTVjMDVkLWM4ZTEtNDA1Zi04YjRlLWQzZWU3YjAyMmNkMCJ9&amp;execution=d0c25c40-85ad-491b-9103-a7a2fe3ab5b5&amp;kc_locale=es">ES</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navtitle">
+    <div class="container">
+      <div class="title">Departamento de Educación</div>
+    </div>
+  </div>
+</header>
+
+</h1>
+      </header>
+      <div id="kc-content">
+        <div id="kc-content-wrapper">
+
+
+
+<link rel="stylesheet" href="/auth/resources/fz4zu/login/educa/css/site.min.css">
+<script type="text/javascript" src="/auth/resources/fz4zu/login/educa/js/site.min.js"></script>
+<script type="text/javascript" src="/auth/resources/fz4zu/login/educa/js/script.js"></script>
+<script type="text/javascript" src="/auth/resources/fz4zu/login/educa/js/purify.min.js"></script>
+<script>
+  <!-- ajustes para quitar en esta pagina estilos y ocultar cabecera -->
+  document.documentElement.className='';
+  document.getElementById('kc-header').classList.add('hidden');
+  document.getElementById('kc-header-wrapper').classList.add('hidden');
+</script>
+<input type="hidden" id="Culture" value="ES">
+
+<div id="avisoEduca" class="alert alert-info hidden container">
+  <h4 class="alert-heading">Avisos Educa</h4>
+  <p id="avisoEducaContent"></p>
+</div>
+<div class="container body-content">
+  <div class="row">
+    <div class="col-sm-12 time">
+      <i class="fa fa-clock-o icontime"></i>
+      <span id="clock"></span>
+    </div>
+  </div>
+
+  <div class="login-page">
+    <div class="row">
+      <div class="col-xs-12 ">
+        <h2>Acceso con usuario EDUCA
+            <a href="https://drive.google.com/file/d/1Bew6QTJW9JAFXLPl1CgD9VP8mgCfdRBG/view?usp=sharing" target="_blank">
+              <i class="fa fa-question-circle" alt="Ayuda" title="Ayuda"></i>
+            </a>
+        </h2>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-6 ">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <form id="kc-form-login" onsubmit="login.disabled = true; return true;" action="https://sso.educacion.navarra.es/auth/realms/educacion.navarra.es/login-actions/authenticate?session_code=nWFjVEEidDLMCs54iGBhKLLPzCx-VYIrtCdwWL-TRXc&amp;execution=d0c25c40-85ad-491b-9103-a7a2fe3ab5b5&amp;client_id=educa-mensajeria-frontend&amp;tab_id=zkj7TsDPcFQ&amp;client_data=eyJydSI6Imh0dHBzOi8vZWR1Y2FnZXMubmF2YXJyYS5lcy9FZHVjYS9tZW5zYWplcmlhL2VzLyIsInJ0IjoiY29kZSIsInJtIjoiZnJhZ21lbnQiLCJzdCI6IjRiMTVjMDVkLWM4ZTEtNDA1Zi04YjRlLWQzZWU3YjAyMmNkMCJ9" method="post">
+              <div class="form-group ">
+                <label for="username">Nombre de usuario</label>
+                <input tabindex="1" id="username" class="form-control" name="username" value=""  type="text" autofocus autocomplete="off"/>
+              </div>
+              <div class="form-group ">
+                <label for="password">Contraseña</label>
+                <input tabindex="2" id="password" class="form-control" name="password" type="password" autocomplete="off"/>
+               </div>
+               <div>
+                 <a class="recordarPass" tabindex="4" href="https://educages.navarra.es/Educa/public/trUSRPasswordResetSolicitud">Accedo por primera vez / No recuerdo la contraseña</a>
+               </div>
+               <div>
+                 &#128273;<a class="recordarPass" tabindex="4" href="/auth/realms/educacion.navarra.es/account/#/security/signingin">Configurar doble factor de seguridad (2FA)</a>
+               </div>
+               <div id="kc-form-buttons" class="botonera">
+                 <input type="hidden" id="id-hidden-input" name="credentialId" />
+                 <input tabindex="3" class="btn btn-continue" name="login" id="kc-login" type="submit" value="Iniciar sesión"/>
+               </div>
+            </form>
+          </div>
+        </div>
+        <div class="lnkAyudaTramitarInet">
+          <a class="ayuda" target="_blank" rel="noopener noreferrer" href="https://www.navarra.es/es/tramites/ayuda-para-tramitar-por-internet">
+            Ayuda para tramitar por internet
+          </a>
+        </div>
+      </div>
+
+      
+      <div class="col-md-6 col-sm-12 text-center" style="padding:0px">
+        <div class="row">
+      
+          <div class="col-xs-12">
+          
+            <a id="social-clave" class="btn btn-default btn-login" type="button" href="/auth/realms/educacion.navarra.es/broker/clave/login?client_id=educa-mensajeria-frontend&amp;tab_id=zkj7TsDPcFQ&amp;client_data=eyJydSI6Imh0dHBzOi8vZWR1Y2FnZXMubmF2YXJyYS5lcy9FZHVjYS9tZW5zYWplcmlhL2VzLyIsInJ0IjoiY29kZSIsInJtIjoiZnJhZ21lbnQiLCJzdCI6IjRiMTVjMDVkLWM4ZTEtNDA1Zi04YjRlLWQzZWU3YjAyMmNkMCJ9&amp;session_code=nWFjVEEidDLMCs54iGBhKLLPzCx-VYIrtCdwWL-TRXc">
+              <div class="display-name col">
+                <div class="fa fa-lock fa-3x" aria-hidden="true">
+                  <img src="/auth/resources/fz4zu/login/educa/img/clave.png" alt="Cl@ve" class="img-clave" aria-label="Cl@ve" title="Cl@ve" width="155">
+                </div>
+                <div>Credencial Cl@ve</div>
+              </div>
+            </a>
+            
+
+            
+          </div>
+          <div class="col-xs-12">
+          
+            
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>    
+</div>
+
+
+
+<link rel="stylesheet" href="/auth/resources/fz4zu/login/educa/css/site.min.css">
+<script type="text/javascript" src="/auth/resources/fz4zu/login/educa/js/site.min.js"></script>
+<script type="text/javascript" src="/auth/resources/fz4zu/login/educa/js/script.js"></script>
+<script type="text/javascript" src="/auth/resources/fz4zu/login/educa/js/purify.min.js"></script>
+<script>
+  <!-- ajustes para quitar en esta pagina estilos y ocultar cabecera -->
+  document.documentElement.className='';
+  document.getElementById('kc-header').classList.add('hidden');
+  document.getElementById('kc-header-wrapper').classList.add('hidden');
+</script>
+<input type="hidden" id="Culture" value="ES">
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
 </body>
 </html>
